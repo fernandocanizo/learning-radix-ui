@@ -1,4 +1,6 @@
-import type { MetaFunction } from "@remix-run/node";
+import mainStyles from "~/main.css";
+
+import type { MetaFunction, LinksFunction } from "@remix-run/node";
 
 import * as Popover from '@radix-ui/react-popover';
 
@@ -9,14 +11,18 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: mainStyles },
+];
+
 export default function Index() {
   return (
     <Popover.Root>
-      <Popover.Trigger>More info</Popover.Trigger>
+      <Popover.Trigger className="PopoverTrigger">More info</Popover.Trigger>
       <Popover.Portal>
-        <Popover.Content>
+        <Popover.Content className="PopoverContent">
           Some more info…
-          <Popover.Arrow />
+          <Popover.Arrow className="PopoverArrow" />
         </Popover.Content>
       </Popover.Portal>
     </Popover.Root>
