@@ -26,7 +26,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Theme>
+        <Theme accentColor="crimson" grayColor="sand" radius="large" scaling="95%">
           <Outlet />
         </Theme>
 
