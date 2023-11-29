@@ -1,5 +1,8 @@
 import { cssBundleHref } from "@remix-run/css-bundle";
+import { Theme } from "@itsmapleleaf/radix-themes";
+
 import type { LinksFunction } from "@remix-run/node";
+
 import {
   Links,
   LiveReload,
@@ -23,7 +26,10 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <Theme>
+          <Outlet />
+        </Theme>
+
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
